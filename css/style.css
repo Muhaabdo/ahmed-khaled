@@ -1047,17 +1047,49 @@ textarea:focus {
 }
 
 @media (max-width: 760px) {
+  .nav-wrap {
+    min-height: 56px;
+    gap: 0.55rem;
+  }
+
+  .brand-title {
+    font-size: 0.92rem;
+  }
+
+  .nav-tools {
+    gap: 0.35rem;
+  }
+
+  .lang-toggle,
+  .menu-toggle {
+    min-height: 34px;
+  }
+
+  .lang-toggle {
+    padding-inline: 0.72rem;
+    font-size: 0.78rem;
+  }
+
+  .menu-toggle {
+    width: 34px;
+    min-width: 34px;
+  }
+
+  .menu-toggle span {
+    width: 16px;
+  }
+
   .menu-toggle {
     display: inline-flex;
   }
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 56px;
     inset-inline: 0;
     background: var(--white);
     border-bottom: 1px solid var(--line);
-    padding: 0.8rem 1rem;
+    padding: 0.65rem 0.9rem;
     display: none;
     flex-direction: column;
     align-items: start;

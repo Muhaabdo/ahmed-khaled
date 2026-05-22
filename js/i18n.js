@@ -222,7 +222,7 @@
       home_kicker: "New Launch",
       home_title: "Hacienda Ras El Hekma",
       home_subtitle: "The largest destination on Egypt's North Coast",
-      home_meta: "Starting from 5% down payment - Installments up to 10 years",
+      home_meta: "5% Down Payments, up to 10 years installments",
       hero_scroll_aria: "Scroll to content",
       hero_stat_1_t: "Feddan",
       hero_stat_1_v: "1,400",
