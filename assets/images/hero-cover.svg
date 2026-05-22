@@ -1,0 +1,31 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A183A"/>
+      <stop offset="0.5" stop-color="#122B63"/>
+      <stop offset="1" stop-color="#09142E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="220" y1="120" x2="1540" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d31148" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#d31148" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1430 200) rotate(138.58) scale(700 500)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="0" y="0" width="1920" height="1080" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <g filter="url(#blur)">
+    <path d="M-120 700C250 500 500 560 860 700C1210 840 1450 860 2050 620" stroke="#ffffff" stroke-opacity="0.23" stroke-width="36"/>
+    <path d="M-180 840C180 630 490 640 860 820C1240 1000 1500 960 2100 740" stroke="#d31148" stroke-opacity="0.25" stroke-width="28"/>
+    <path d="M-150 470C220 290 610 250 980 390C1310 510 1600 500 2090 350" stroke="#ffffff" stroke-opacity="0.14" stroke-width="20"/>
+  </g>
+
+  <rect width="1920" height="1080" fill="url(#accent)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+</svg>
