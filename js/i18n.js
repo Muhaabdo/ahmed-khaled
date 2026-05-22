@@ -34,7 +34,7 @@
       hero_stat_1_v: "1,400",
       hero_stat_2_t: "واجهة بحرية",
       hero_stat_2_v: "4.8 كم",
-      hero_stat_3_t: "وحدات بإطلالة بحر",
+      hero_stat_3_t: "وحدات باطلاله مائيه",
       hero_stat_3_v: "97%",
       hero_stat_4_t: "مساحات خضراء ومائية",
       hero_stat_4_v: "84%",
@@ -190,7 +190,7 @@
       thanks_back_home: "العودة للرئيسية",
 
       cookie_text:
-        "يستخدم هذا الموقع ملفات تعريف الارتباط وتقنيات التتبع لتحسين النتائج وتجربة المستخدم. استمرارك في التصفح يعني موافقتك على",
+        "نستخدم ملفات تعريف الارتباط لتحسين تجربتك. باستمرارك في التصفح، أنت توافق على",
       cookie_and: "و",
 
       unit_chalet: "شاليه",
@@ -228,7 +228,7 @@
       hero_stat_1_v: "1,400",
       hero_stat_2_t: "Beach Frontage",
       hero_stat_2_v: "4.8 km",
-      hero_stat_3_t: "Sea View Units",
+      hero_stat_3_t: "Water View Units",
       hero_stat_3_v: "97%",
       hero_stat_4_t: "Green & Water Landscapes",
       hero_stat_4_v: "84%",
@@ -384,7 +384,7 @@
       thanks_back_home: "Back to Home",
 
       cookie_text:
-        "This website uses cookies and tracking technologies to improve outcomes and user experience. By continuing to browse, you agree to the",
+        "We use cookies to improve your experience. By continuing to browse, you agree to the",
       cookie_and: "and",
 
       unit_chalet: "Chalet",
