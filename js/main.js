@@ -113,10 +113,11 @@
   }
 
   function buildWhatsappMessage(unitLabel) {
-    const base = window.SiteI18n.t("en", "whatsapp_general");
+    const lang = window.SiteI18n.getLang();
+    const base = window.SiteI18n.t(lang, "whatsapp_general");
     if (!unitLabel) return base;
 
-    return `${base} Unit type: ${unitLabel}.`;
+    return `${base} أنا مهتم بالوحدة ${unitLabel}.`;
   }
 
   function setWhatsappHref(element, unitLabel) {
@@ -128,21 +129,21 @@
   }
 
   function refreshWhatsAppLinks() {
-    const generalButtons = document.querySelectorAll(".whatsapp-general");
-    generalButtons.forEach((btn) => setWhatsappHref(btn, ""));
-
-    const unitButtons = document.querySelectorAll(".whatsapp-unit");
-    unitButtons.forEach((btn) => {
+    document.querySelectorAll(".whatsapp-unit").forEach((btn) => {
       const unitKey = btn.getAttribute("data-unit-key") || "";
-      const label = unitKey ? window.SiteI18n.t("en", unitKey) : "";
+      const label = unitKey ? window.SiteI18n.t(window.SiteI18n.getLang(), unitKey) : "";
       setWhatsappHref(btn, label);
+    });
+
+    document.querySelectorAll(".call-link").forEach((link) => {
+      link.setAttribute("href", `tel:${CALL_NUMBER}`);
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
     });
   }
 
   function setupCallLinks() {
-    document.querySelectorAll(".call-link").forEach((link) => {
-      link.setAttribute("href", `tel:${CALL_NUMBER}`);
-    });
+    refreshWhatsAppLinks();
   }
 
   function decorateWhatsAppButtons() {
