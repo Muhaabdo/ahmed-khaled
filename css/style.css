@@ -526,20 +526,21 @@ body.lightbox-open {
 
 .units-section .inline-ctas .btn {
   flex: 1 1 140px;
+  font-size: 0.82rem;
+  padding: 0.58rem 0.8rem;
 }
 
 .units-section .inline-ctas .btn-whatsapp {
   flex: 1.2 1 150px;
-  min-height: 42px;
-  padding: 0.7rem 0.9rem;
+  min-height: 38px;
+  padding: 0.58rem 0.8rem;
+  font-size: 0.82rem;
 }
 
 .units-section .inline-ctas .call-link {
-  flex: 0 0 42px;
-  min-height: 42px;
-  width: 42px;
-  padding: 0;
-  border-radius: 999px;
+  flex: 0 0 38px;
+  min-height: 38px;
+  width: 38px;
 }
 
 .unit-pill {
