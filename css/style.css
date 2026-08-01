@@ -157,13 +157,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   border: none;
   border-radius: 999px;
-  padding: 0.75rem 1.3rem;
+  padding: 0.64rem 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: 0.25s ease;
+  font-size: 0.92rem;
 }
 
 .btn-primary {
@@ -524,7 +525,21 @@ body.lightbox-open {
 }
 
 .units-section .inline-ctas .btn {
-  flex: 1 1 150px;
+  flex: 1 1 140px;
+}
+
+.units-section .inline-ctas .btn-whatsapp {
+  flex: 1.2 1 150px;
+  min-height: 42px;
+  padding: 0.7rem 0.9rem;
+}
+
+.units-section .inline-ctas .call-link {
+  flex: 0 0 42px;
+  min-height: 42px;
+  width: 42px;
+  padding: 0;
+  border-radius: 999px;
 }
 
 .unit-pill {
