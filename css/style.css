@@ -567,6 +567,62 @@ body.lightbox-open {
   padding: 0.45rem 0.6rem;
 }
 
+.price-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #5b6070;
+}
+
+.price-amount {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand-red);
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.villa-price-list {
+  display: flex;
+  width: 100%;
+}
+
+.villa-price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.45rem 0.1rem;
+  border-bottom: 1px solid rgba(211, 17, 72, 0.12);
+}
+
+.villa-price-item:last-child {
+  border-bottom: none;
+}
+
+.villa-price-item-primary {
+  padding-top: 0;
+}
+
+.villa-price-list .price-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.villa-price-list .price-amount {
+  font-size: 0.98rem;
+  text-align: end;
+}
+
 .unit-card-note {
   margin: 0 0 0.75rem;
   font-size: 0.84rem;
@@ -1241,6 +1297,18 @@ html[dir="rtl"] .footer-links {
 html[dir="rtl"] .list {
   padding-inline-start: 0;
   padding-inline-end: 1.1rem;
+}
+
+html[dir="rtl"] .villa-price-item {
+  direction: rtl;
+}
+
+html[dir="rtl"] .villa-price-item .price-label {
+  text-align: start;
+}
+
+html[dir="rtl"] .villa-price-item .price-amount {
+  text-align: left;
 }
 /* ===== MOBILE HERO FIT TO SCREEN ===== */
 @media (max-width: 760px) {

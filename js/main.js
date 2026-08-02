@@ -135,6 +135,10 @@
       setWhatsappHref(btn, label);
     });
 
+    document.querySelectorAll(".whatsapp-general").forEach((btn) => {
+      setWhatsappHref(btn, "");
+    });
+
     document.querySelectorAll(".call-link").forEach((link) => {
       link.setAttribute("href", `tel:${CALL_NUMBER}`);
       link.removeAttribute("target");
