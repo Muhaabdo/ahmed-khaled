@@ -25,29 +25,42 @@
     return lines.filter(Boolean).join("\n");
   }
 
+  function setFieldError(field, hasError) {
+    const wrap = field?.closest(".form-field");
+    if (!wrap) return;
+    wrap.classList.toggle("has-error", hasError);
+  }
+
   function setupLeadForm() {
     const form = document.querySelector("#lead-form");
     if (!form) return;
 
     const whatsappSubmit = form.getAttribute("data-whatsapp-submit") === "true";
+    const phone = form.querySelector("#phone");
+    const unitType = form.querySelector("#unitType");
+
+    phone?.addEventListener("input", () => {
+      if (/^\+?[0-9\s-]{8,20}$/.test(phone.value.trim())) setFieldError(phone, false);
+    });
+    unitType?.addEventListener("change", () => {
+      if (unitType.value) setFieldError(unitType, false);
+    });
 
     form.addEventListener("submit", (event) => {
-      const phone = form.querySelector("#phone");
-      const unitType = form.querySelector("#unitType");
-
       const phoneValue = (phone?.value || "").trim();
       const phoneOk = /^\+?[0-9\s-]{8,20}$/.test(phoneValue);
+      setFieldError(phone, !phoneOk);
       if (!phoneOk) {
         event.preventDefault();
-        alert("Please enter a valid phone number with country code / من فضلك ادخل رقم هاتف صحيح بكود الدولة");
         phone?.focus();
         return;
       }
 
-      if (unitType && !unitType.value) {
+      const unitTypeOk = !unitType || !!unitType.value;
+      setFieldError(unitType, !unitTypeOk);
+      if (!unitTypeOk) {
         event.preventDefault();
-        alert("Please choose a unit type / من فضلك اختر نوع الوحدة");
-        unitType.focus();
+        unitType?.focus();
         return;
       }
 

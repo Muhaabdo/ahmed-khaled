@@ -98,7 +98,8 @@
     const langToggles = document.querySelectorAll(".lang-toggle");
     const savedLang = localStorage.getItem("siteLang");
     if (savedLang !== "en" && savedLang !== "ar") {
-      localStorage.setItem("siteLang", "en");
+      const page = document.body.getAttribute("data-page");
+      localStorage.setItem("siteLang", page === "badya" ? "ar" : "en");
     }
     const lang = window.SiteI18n.getLang();
     window.SiteI18n.applyLanguage(lang);

@@ -7,6 +7,7 @@
   --white: #ffffff;
   --line: #e7e5e4;
   --success: #198754;
+  --error: #dc2626;
   --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.14);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
   --radius-lg: 20px;
@@ -952,6 +953,23 @@ textarea:focus {
   font-size: 0.83rem;
 }
 
+.form-field.has-error input,
+.form-field.has-error select {
+  border-color: var(--error);
+  outline: 2px solid rgba(220, 38, 38, 0.18);
+}
+
+.field-error {
+  display: none;
+  color: var(--error);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.form-field.has-error .field-error {
+  display: block;
+}
+
 #leadFormWhatsappNote {
   display: block;
   color: var(--success);
@@ -1053,35 +1071,6 @@ textarea:focus {
   margin-top: 0;
 }
 
-.business-card-slot {
-  margin-top: 1rem;
-  border: 2px dashed rgba(211, 17, 72, 0.35);
-  border-radius: 14px;
-  background: rgba(211, 17, 72, 0.04);
-  padding: 1rem;
-  text-align: center;
-}
-
-.business-card-image {
-  display: block;
-  width: min(100%, 420px);
-  margin: 0 auto 0.7rem;
-  border-radius: 12px;
-  border: 1px solid rgba(15, 15, 16, 0.14);
-  box-shadow: 0 12px 30px rgba(15, 15, 16, 0.12);
-}
-
-.business-card-slot h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-}
-
-.business-card-slot p {
-  margin: 0;
-  color: var(--text-soft);
-  font-size: 0.88rem;
-}
-
 .about-contact-wrap {
   margin-top: 1rem;
 }
@@ -1100,10 +1089,6 @@ textarea:focus {
 .about-contact-grid .btn {
   width: 100%;
   min-height: 46px;
-}
-
-.about-email-link {
-  font-weight: 700;
 }
 
 .success-card {
