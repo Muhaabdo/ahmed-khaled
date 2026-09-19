@@ -114,7 +114,9 @@
 
   function buildWhatsappMessage(unitLabel) {
     const lang = window.SiteI18n.getLang();
-    const base = window.SiteI18n.t(lang, "whatsapp_general");
+    const page = document.body.getAttribute("data-page");
+    const key = page === "hacienda" || page === "badya" ? `whatsapp_general_${page}` : "whatsapp_general";
+    const base = window.SiteI18n.t(lang, key);
     if (!unitLabel) return base;
 
     return `${base} أنا مهتم بالوحدة ${unitLabel}.`;

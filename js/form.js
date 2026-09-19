@@ -1,23 +1,35 @@
 (function () {
-  function getUrlParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name) || "";
+  function buildLeadWhatsappMessage(form) {
+    const lang = window.SiteI18n ? window.SiteI18n.getLang() : "en";
+    const fullName = form.querySelector("#fullName")?.value.trim() || "";
+    const phone = form.querySelector("#phone")?.value.trim() || "";
+    const email = form.querySelector("#email")?.value.trim() || "";
+    const unitType = form.querySelector("#unitType")?.value || "";
+
+    const lines = lang === "ar"
+      ? [
+          "مرحبًا، أرغب في معرفة تفاصيل أكتر.",
+          `الاسم: ${fullName}`,
+          `الهاتف: ${phone}`,
+          email ? `البريد الإلكتروني: ${email}` : "",
+          unitType ? `نوع الوحدة: ${unitType}` : ""
+        ]
+      : [
+          "Hello, I'd like more details.",
+          `Name: ${fullName}`,
+          `Phone: ${phone}`,
+          email ? `Email: ${email}` : "",
+          unitType ? `Unit Type: ${unitType}` : ""
+        ];
+
+    return lines.filter(Boolean).join("\n");
   }
 
   function setupLeadForm() {
     const form = document.querySelector("#lead-form");
     if (!form) return;
 
-    const nextInput = form.querySelector('input[name="_next"]');
-    if (nextInput) {
-      nextInput.value = `${window.location.origin}${window.location.pathname.replace(/[^/]+$/, "")}thank-you.html`;
-    }
-
-    const sourceInput = form.querySelector('input[name="source"]');
-    const campaignInput = form.querySelector('input[name="campaign"]');
-
-    if (sourceInput) sourceInput.value = getUrlParam("utm_source") || "google";
-    if (campaignInput) campaignInput.value = getUrlParam("utm_campaign") || "search_campaign";
+    const whatsappSubmit = form.getAttribute("data-whatsapp-submit") === "true";
 
     form.addEventListener("submit", (event) => {
       const phone = form.querySelector("#phone");
@@ -36,6 +48,25 @@
         event.preventDefault();
         alert("Please choose a unit type / من فضلك اختر نوع الوحدة");
         unitType.focus();
+        return;
+      }
+
+      if (whatsappSubmit) {
+        event.preventDefault();
+
+        const number = (window.SiteMain && window.SiteMain.whatsappNumber) || "201017668746";
+        const waLink = `https://wa.me/${number}?text=${encodeURIComponent(buildLeadWhatsappMessage(form))}`;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "whatsapp_lead_submit", page: document.body.getAttribute("data-page") || "" });
+
+        const note = document.querySelector("#leadFormWhatsappNote");
+        if (note) {
+          note.setAttribute("href", waLink);
+          note.removeAttribute("hidden");
+        }
+
+        window.open(waLink, "_blank", "noopener,noreferrer");
       }
     });
   }
